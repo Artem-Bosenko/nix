@@ -1,0 +1,19 @@
+###RUN COMPILE
+
+>javac -sourcepath ./src -d build/classes -cp ./libs/commons-lang3-3.11.jar;./libs/commons-text-1.9.jar src/car/mechanics/Mechanic.java src/car/Car.java src/Main.java
+----------------------------------------------------------------------------------
+###CREATE JAR PROJECT
+
+>jar cfm build/jar/HomeTask.jar MANIFEST.MF -C build/classes/ .
+
+----------------------------------------------------------------------------------
+###RUN PROGRAM FROM JAR
+
+>java -jar build/jar/HomeTask.jar
+
+----------------------------------------------------------------------------------
+###RUN PROGRAM AFTER COMPILE WITHOUT JAR
+
+>java -cp build\classes\;.\libs\commons-lang3-3.11.jar;./libs/commons-text-1.9.jar Main
+
+----------------------------------------------------------------------------------
