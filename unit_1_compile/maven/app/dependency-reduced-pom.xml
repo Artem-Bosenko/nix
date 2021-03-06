@@ -20,7 +20,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>Main</mainClass>
+                  <mainClass>main.java.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>

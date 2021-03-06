@@ -1,10 +1,16 @@
-package car.mechanics;
+package main.java.car.mechanics;
 
-import org.apache.commons.text.*;
+import org.apache.commons.text.TextStringBuilder;
+
 
 public class Mechanic {
     public void run(){
-        System.out.println("It's a Mechnics class" );
-        System.out.println(StringEscapeUtils.escapeJava("It's a Mechnics class"));
+
+        TextStringBuilder textStringBuilder = new TextStringBuilder("It's a Mechnics class");
+        System.out.println(textStringBuilder);
+
+        TextStringBuilder[] textStringBuilders = new TextStringBuilder[textStringBuilder.capacity()];
+        textStringBuilder.appendSeparator("&&&&");
+        System.out.println(textStringBuilder);
     }
 }

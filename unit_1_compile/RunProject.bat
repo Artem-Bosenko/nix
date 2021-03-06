@@ -8,3 +8,5 @@ cd ../
 echo \\\\\\\\\\\\\\\\\\///////////////
 cd maven
 call mavenStart.bat
+call runMaven.bat
+cd ../../

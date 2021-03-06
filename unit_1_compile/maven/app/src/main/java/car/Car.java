@@ -1,6 +1,6 @@
-package car;
+package main.java.car;
 
-import car.mechanics.Mechanic;
+import main.java.car.mechanics.Mechanic;
 import org.apache.commons.lang3.*;
 
 public class Car {
