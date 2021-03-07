@@ -5,7 +5,7 @@ import org.apache.commons.text.TextStringBuilder;
 
 public class Mechanic {
     public void run(){
-
+        int i = 10;
         TextStringBuilder textStringBuilder = new TextStringBuilder("It's a Mechnics class");
         System.out.println(textStringBuilder);
 
