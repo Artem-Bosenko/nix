@@ -6,6 +6,8 @@ import org.apache.commons.text.TextStringBuilder;
 public class Mechanic {
     public void run(){
 
+        int a = 5;
+
         TextStringBuilder textStringBuilder = new TextStringBuilder("It's a Mechnics class");
         System.out.println(textStringBuilder);
 
