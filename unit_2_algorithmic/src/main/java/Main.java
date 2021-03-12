@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
         BufferedReader stringReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Input string for tasks (1 and 2) ");
@@ -25,7 +25,7 @@ public class Main {
         System.out.println("calculation = " + calculation);
 
         System.out.println("\nSecond task:");
-        SymbolCalculation.t(taskString);
+        SymbolCalculation.calculatioSymbol(taskString);
 
         System.out.println("\nThird task:");
 
@@ -34,8 +34,11 @@ public class Main {
 
         int inputLesson = 1;
 
+
         try {
-            inputLesson = Integer.parseInt(buf.readLine());
+            do {
+                inputLesson = Integer.parseInt(buf.readLine());
+            } while (inputLesson < 1 || inputLesson > 10);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -5,17 +5,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.LinkedList;
 import java.util.HashMap;
-import java.util.Comparator;
+
+/*реализуйте задачу, которая в случайной строке вычленяет все символы латиницы/кириллицы и сортирует их, указывая количество вхождений каждого символа
+
+Пример:
+
+Входные данные: 1w4t!7
+Выходные данные:
+
+1. t - 2
+2. w - 1
+*/
 
 public class SymbolCalculation {
 
-    public static void t(String str) {
+    public static void calculatioSymbol(String str) {
 
         char[] chars = str.toCharArray();
         List<Character> characterList = new LinkedList<>();
         Map<Character, Integer> mapCharacter = new HashMap<>();
 
-        /*for(int i=0; i<chars.length-1; i++){
+        for(int i=0; i<chars.length-1; i++){
             for (int j=0; j<chars.length-1-i; j++){
 
                 if(chars[j]>chars[j+1]){
@@ -25,7 +35,7 @@ public class SymbolCalculation {
                     chars[j+1] = k;
                 }
             }
-        }*/
+        }
 
         //Arrays.sort(chars);
 
@@ -37,7 +47,6 @@ public class SymbolCalculation {
                 mapCharacter.put(sym, 0);
             }
         }
-        characterList.sort(Comparator.naturalOrder());
 
         int counter = 1;
         for (Map.Entry<Character, Integer> m : mapCharacter.entrySet()) {
