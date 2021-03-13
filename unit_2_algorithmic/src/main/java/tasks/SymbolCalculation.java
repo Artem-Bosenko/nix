@@ -18,7 +18,7 @@ import java.util.TreeMap;
 
 public class SymbolCalculation {
 
-    public static void calculatioSymbol(String str) {
+    public static void calculationSymbol(String str) {
 
         char[] chars = str.toCharArray();
         List<Character> characterList = new LinkedList<>();
