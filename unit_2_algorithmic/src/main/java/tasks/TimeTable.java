@@ -1,4 +1,4 @@
-package main.java;
+package main.java.tasks;
 
 /*В некоторой школе занятия начинаются в 9:00. Продолжительность урока — 45 минут,
 после 1-го, 3-го, 5-го и т.д. уроков перемена 5 минут, а после 2-го, 4-го, 6-го и т.д. — 15 минут.
@@ -17,7 +17,7 @@ package main.java;
 
 public class TimeTable {
 
-    private static int startLesson = 9 * 60, smallRest = 5, bigRest = 15, lesson = 45;
+    private static final int startLesson = 9 * 60, smallRest = 5, bigRest = 15, lesson = 45;
 
     public static void timeEndLesson(int inputLesson) {
 

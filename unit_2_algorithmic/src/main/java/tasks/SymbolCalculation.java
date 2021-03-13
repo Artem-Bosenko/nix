@@ -1,10 +1,9 @@
-package main.java;
+package main.java.tasks;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 import java.util.LinkedList;
-import java.util.HashMap;
+import java.util.TreeMap;
 
 /*реализуйте задачу, которая в случайной строке вычленяет все символы латиницы/кириллицы и сортирует их, указывая количество вхождений каждого символа
 
@@ -23,9 +22,9 @@ public class SymbolCalculation {
 
         char[] chars = str.toCharArray();
         List<Character> characterList = new LinkedList<>();
-        Map<Character, Integer> mapCharacter = new HashMap<>();
+        Map<Character, Integer> mapCharacter = new TreeMap<>();
 
-        for(int i=0; i<chars.length-1; i++){
+        /*for(int i=0; i<chars.length-1; i++){
             for (int j=0; j<chars.length-1-i; j++){
 
                 if(chars[j]>chars[j+1]){
@@ -35,9 +34,7 @@ public class SymbolCalculation {
                     chars[j+1] = k;
                 }
             }
-        }
-
-        //Arrays.sort(chars);
+        }*/
 
         for (char sym : chars) {
 
