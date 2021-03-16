@@ -56,6 +56,7 @@ public class ConsoleInput {
         sumNumberOfFigure(taskString);
     }
 
+
     private void secondTask() {
 
         System.out.println("\nSecond task:");
