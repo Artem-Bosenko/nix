@@ -1,7 +1,6 @@
 package main.java.ua.com.hometask.impl;
 
 import main.java.ua.com.hometask.ConsoleHelper;
-
 import java.util.Scanner;
 
 public class DefaultConsoleHelper implements ConsoleHelper {
@@ -15,6 +14,7 @@ public class DefaultConsoleHelper implements ConsoleHelper {
 
     @Override
     public void showOperations() {
+        System.out.println("Please, choose operation:");
         System.out.print("1. summary(+)\n2. subtraction(-)\n3. devision(/)\n4. multiply(*)\n5. Remainder of division( a (mod b))\nYour choose ->");
     }
 
@@ -28,8 +28,4 @@ public class DefaultConsoleHelper implements ConsoleHelper {
         System.out.println(str);
     }
 
-    @Override
-    public void getAnswer(int tmp) {
-        tmp = Integer.parseInt(scanner.next());
-    }
 }

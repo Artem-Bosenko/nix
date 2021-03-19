@@ -2,38 +2,42 @@ package main.java.ua.com.hometask.impl;
 
 import main.java.ua.com.hometask.Calculator;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+
 public class CalculatorWithAnimation implements Calculator {
 
     public CalculatorWithAnimation(){
         System.out.println("It's a new super realization of calculator with graphic!");
     }
     @Override
-    public Number summary(double a, double b) {
+    public BigDecimal summary(BigDecimal a, BigDecimal b) {
         System.out.println("Summary:\n" + a + " + " + b);
-        return a + b;
+        return a.add(b);
     }
 
     @Override
-    public Number subtraction(double a, double b) {
+    public BigDecimal subtraction(BigDecimal a, BigDecimal b) {
         System.out.println("Subtraction:\n" +a + " - " + b);
-        return a - b;
+        return a.subtract(b);
     }
 
     @Override
-    public Number devide(double a, double b) {
+    public BigDecimal devide(BigDecimal a, BigDecimal b) {
         System.out.println("Devision:\n" +a + " / " + b);
-        return a / b;
+        return a.setScale(6).divide(b,BigDecimal.ROUND_HALF_UP);
     }
 
     @Override
-    public Number multiply(double a, double b) {
+    public BigDecimal multiply(BigDecimal a, BigDecimal b) {
         System.out.println("Multiply:\n" +a + " * " + b);
-        return a * b;
+        return a.multiply(b);
     }
 
     @Override
-    public Number modulDevide(int a, int b) {
+    public BigDecimal modulDevide(BigInteger a, BigInteger b) {
         System.out.println("Remainder of division:\n" +a + " mod(" + b + ")");
-        return a%b;
+        return new BigDecimal(a.mod(b).toString());
     }
 }

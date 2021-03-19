@@ -2,6 +2,10 @@ package main.java.ua.com.hometask.impl;
 
 import main.java.ua.com.hometask.Calculator;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+
 @Deprecated
 public class DefaultCalculator implements Calculator {
 
@@ -10,32 +14,32 @@ public class DefaultCalculator implements Calculator {
     }
 
     @Override
-    public Number summary(double a, double b) {
+    public BigDecimal summary(BigDecimal a, BigDecimal b) {
         System.out.println(a + " + " + b);
-        return a + b;
+        return a.add(b);
     }
 
     @Override
-    public Number subtraction(double a, double b) {
+    public BigDecimal subtraction(BigDecimal a, BigDecimal b) {
         System.out.println(a + " - " + b);
-        return a - b;
+        return a.subtract(b);
     }
 
     @Override
-    public Number devide(double a, double b) {
+    public BigDecimal devide(BigDecimal a, BigDecimal b) {
         System.out.println(a + " / " + b);
-        return a / b;
+        return a.divide(b);
     }
 
     @Override
-    public Number multiply(double a, double b) {
+    public BigDecimal multiply(BigDecimal a, BigDecimal b) {
         System.out.println(a + " * " + b);
-        return a * b;
+        return a.multiply(b);
     }
 
     @Override
-    public Number modulDevide(int a, int b) {
+    public BigDecimal modulDevide(BigInteger a, BigInteger b) {
         System.out.println(a + " mod(" + b + ")");
-        return a%b;
+        return new BigDecimal((a.mod(b)).toString());
     }
 }

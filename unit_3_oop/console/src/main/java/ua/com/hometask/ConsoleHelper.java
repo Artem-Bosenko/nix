@@ -5,6 +5,5 @@ public interface ConsoleHelper {
     void showOperations();
     String inputInf();
     void outputInf(String str);
-    void getAnswer(int tmp);
 
 }

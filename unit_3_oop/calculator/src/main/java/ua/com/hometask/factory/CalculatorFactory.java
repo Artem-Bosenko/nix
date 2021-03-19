@@ -1,6 +1,5 @@
 package main.java.ua.com.hometask.factory;
 
-
 import main.java.ua.com.hometask.Calculator;
 import org.reflections.Reflections;
 
