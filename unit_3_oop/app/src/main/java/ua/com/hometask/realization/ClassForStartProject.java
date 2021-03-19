@@ -6,13 +6,9 @@ import main.java.ua.com.hometask.factory.CalculatorFactory;
 import main.java.ua.com.hometask.factory.ConsoleFactory;
 import main.java.ua.com.hometask.util.*;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class ClassForStartProject {
     private static final ConsoleHelper consoleHelper = ConsoleFactory.getInstance().getConsoleHelper();
     private static final Calculator calculator = CalculatorFactory.getInstance().getCalculator();
-    private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void run(){
         String inputValue;
