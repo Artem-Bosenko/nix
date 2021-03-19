@@ -1,0 +1,4 @@
+main\java\ua\com\hometask\Calculator.class
+main\java\ua\com\hometask\impl\CalculatorWithAnimation.class
+main\java\ua\com\hometask\factory\CalculatorFactory.class
+main\java\ua\com\hometask\impl\DefaultCalculator.class
