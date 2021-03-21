@@ -18,23 +18,11 @@ import java.util.TreeMap;
 
 public class SymbolCalculation {
 
-    public static void calculatioSymbol(String str) {
+    public static void calculationSymbol(String str) {
 
         char[] chars = str.toCharArray();
         List<Character> characterList = new LinkedList<>();
         Map<Character, Integer> mapCharacter = new TreeMap<>();
-
-        /*for(int i=0; i<chars.length-1; i++){
-            for (int j=0; j<chars.length-1-i; j++){
-
-                if(chars[j]>chars[j+1]){
-
-                    char k = chars[j];
-                    chars[j] = chars[j+1];
-                    chars[j+1] = k;
-                }
-            }
-        }*/
 
         for (char sym : chars) {
 

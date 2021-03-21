@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 
 public class ConsoleInput {
 
-    private BufferedReader stringReader = new BufferedReader(new InputStreamReader(System.in));
+    private final BufferedReader stringReader = new BufferedReader(new InputStreamReader(System.in));
 
     private void firstTask() {
         String taskString = "";
@@ -24,11 +24,11 @@ public class ConsoleInput {
             e.printStackTrace();
         }
 
-        sumNumberorFigure(taskString);
+        sumNumberOfFigure(taskString);
     }
 
-    private void sumNumberorFigure(String taskString){
-        int calculation = 0, yourChoice = 0;
+    private void sumNumberOfFigure(String taskString){
+        int calculation, yourChoice = 0;
         Calculation calc = new Calculation();
 
         System.out.print("\nDo you want to find:\n1. sum of Number(Цифр)\n2. sum of Figure(Чисел)\n3. Exit in main menu\nYour choice ->");
@@ -53,8 +53,9 @@ public class ConsoleInput {
                 run();
                 break;
         }
-        sumNumberorFigure(taskString);
+        sumNumberOfFigure(taskString);
     }
+
 
     private void secondTask() {
 
@@ -67,7 +68,7 @@ public class ConsoleInput {
             e.printStackTrace();
         }
 
-        SymbolCalculation.calculatioSymbol(taskString);
+        SymbolCalculation.calculationSymbol(taskString);
         run();
     }
 
@@ -100,16 +101,16 @@ public class ConsoleInput {
         System.out.println("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/");
         System.out.print("Input task number:\n1. Task for calculation sum number\n2. Task for summary symbol in line\n3. Time of end your lesson\n4. Exit\nYour choice is ->");
 
-        int serchTask = 0;
+        int searchTask = 0;
         try {
             do {
-                serchTask = Integer.parseInt(stringReader.readLine());
-            } while (serchTask < 1 || serchTask > 4);
+                searchTask = Integer.parseInt(stringReader.readLine());
+            } while (searchTask < 1 || searchTask > 4);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        switch (serchTask) {
+        switch (searchTask) {
 
             case 1:
                 firstTask();
