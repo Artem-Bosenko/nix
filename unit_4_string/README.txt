@@ -1,0 +1,1 @@
+If you want to start project, you'll run startProject.bat in your console. Also, it is a Maven project
