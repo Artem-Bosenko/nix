@@ -1,4 +1,7 @@
 .idea
 *.iml
 *.class
-target
+app/target
+level1/target
+level2/target
+level3/target

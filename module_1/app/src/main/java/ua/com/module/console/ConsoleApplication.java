@@ -12,8 +12,7 @@ public class ConsoleApplication {
         try {
             System.out.println("Please press enter");
 
-            while (true) {
-                if (!((str = reader.readLine()) != null)) break;
+            while ((str = reader.readLine()) != null) {
 
                 startWindow();
                 str = reader.readLine();
