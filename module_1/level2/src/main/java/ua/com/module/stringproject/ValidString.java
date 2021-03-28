@@ -6,6 +6,7 @@ public class ValidString {
 
         if(str.isEmpty()) return true;
 
+
         for(int i = 0; i< massive.length; i++){
 
             String[] split = str.substring(i, massive.length).split("");
