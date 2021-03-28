@@ -1,0 +1,18 @@
+2021-03-28 01:07:13 INFO  AuthorServiceImpl:17 - Start create Authororea jok
+2021-03-28 01:07:13 INFO  AuthorServiceImpl:19 - End create author. Operation successful
+2021-03-28 01:20:10 INFO  Main:11 - Start project
+2021-03-28 01:20:32 INFO  AuthorServiceImpl:17 - Start create Author: iioo kkk
+2021-03-28 01:20:32 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-03-28 02:17:46 INFO  Main:11 - Start project
+2021-03-28 02:18:14 INFO  AuthorServiceImpl:17 - Start create Author: art moon
+2021-03-28 02:18:14 INFO  AuthorServiceImpl:21 - End create author. Operation successful
+2021-03-28 02:18:30 INFO  AuthorServiceImpl:17 - Start create Author: john hook klon
+2021-03-28 02:18:30 INFO  AuthorServiceImpl:21 - End create author. Operation successful
+2021-03-28 02:18:41 INFO  AuthorServiceImpl:17 - Start create Author: dima kool
+2021-03-28 02:18:41 INFO  AuthorServiceImpl:21 - End create author. Operation successful
+2021-03-28 02:18:41 INFO  BookServiceImpl:19 - Start create book: porn
+2021-03-28 02:18:41 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-03-28 02:19:12 INFO  AuthorServiceImpl:72 - Start get author by first and last name dima kool
+2021-03-28 02:19:12 INFO  AuthorServiceImpl:74 - Operation get authors by irst and last name successful
+2021-03-28 02:19:12 INFO  AuthorServiceImpl:26 - Start read operation. Read info about: dima kool
+2021-03-28 02:19:12 INFO  AuthorServiceImpl:30 - End read info about author. Operation successful

@@ -10,9 +10,6 @@ public class GameInLive {
         this.matrix = matrix;
         this.n = n;
         this.m = m;
-
-        Thread t = new Thread();
-        t.start();
     }
 
     public int[][] isLiveCell() {
