@@ -19,9 +19,11 @@ public class Book extends BaseEntity{
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", authorList=" + authorList.toString() +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Author author : authorList){
+            stringBuilder.append(author.getFirstName() + " " + author.getLastName() + " ");
+        }
+
+        return "Book: ⟪" + title + "⟫ . Authors: " + stringBuilder.toString() ;
     }
 }

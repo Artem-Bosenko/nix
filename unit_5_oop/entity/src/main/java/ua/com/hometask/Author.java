@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.util.List;
 
+
 @Getter
 @Setter
 public class Author extends BaseEntity{
@@ -13,6 +14,7 @@ public class Author extends BaseEntity{
     private String lastName;
     private List<Book> bookList;
 
+
     public Author(){
         super();
         setType(Type.AUTHOR);
@@ -20,10 +22,12 @@ public class Author extends BaseEntity{
 
     @Override
     public String toString() {
-        return "Author{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", bookList=" + bookList.toString() +
-                '}';
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Book book : bookList){
+            stringBuilder.append("⟪" + book.getTitle() + "⟫ ");
+        }
+
+        return "Author: " + firstName + " " + lastName + ". Books (" + stringBuilder.toString() + ")";
     }
 }
