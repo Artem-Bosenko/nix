@@ -83,4 +83,9 @@ public class BookServiceImpl implements BaseTypeService<Book> {
         else log.error("Book: "+title + " not found");
         throw new RuntimeException("author not found");
     }
+
+    public List<Book> findAllBooks(){ return dataBase.getAllBooks();}
+    public boolean isBookExistByTitle(Book book){
+        return dataBase.isBookIDExist(book.getId());
+    }
 }

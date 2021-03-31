@@ -46,7 +46,14 @@ public class BookConsole {
             a.setBookList(bookList);
 
             authorList.add(a);
-            authorService.create(a);
+
+            if(authorService.isAuthorExist(a)){
+                authorService.update(a);
+            }else {
+                authorService.create(a);
+
+            }
+
         }
 
         book.setAuthorList(authorList);

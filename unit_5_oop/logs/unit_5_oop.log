@@ -16,3 +16,47 @@
 2021-03-28 02:19:12 INFO  AuthorServiceImpl:74 - Operation get authors by irst and last name successful
 2021-03-28 02:19:12 INFO  AuthorServiceImpl:26 - Start read operation. Read info about: dima kool
 2021-03-28 02:19:12 INFO  AuthorServiceImpl:30 - End read info about author. Operation successful
+2021-03-28 21:46:53 INFO  Main:11 - Start project
+2021-03-28 21:47:14 INFO  AuthorServiceImpl:17 - Start create Author: Kir Opana
+2021-03-28 21:47:14 INFO  AuthorServiceImpl:21 - End create author. Operation successful
+2021-03-28 21:47:21 INFO  AuthorServiceImpl:17 - Start create Author: Karl Fofana
+2021-03-28 21:47:21 INFO  AuthorServiceImpl:21 - End create author. Operation successful
+2021-03-28 21:47:21 INFO  BookServiceImpl:19 - Start create book: oop
+2021-03-28 21:47:21 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-03-28 21:47:59 INFO  BookServiceImpl:19 - Start create book: oop
+2021-03-28 21:47:59 ERROR BookServiceImpl:22 - Book also exist: oop
+2021-03-28 21:47:59 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-03-28 21:47:59 INFO  AuthorServiceImpl:17 - Start create Author: Armen Kuku
+2021-03-28 21:47:59 INFO  AuthorServiceImpl:21 - End create author. Operation successful
+2021-03-28 21:48:19 INFO  BookServiceImpl:78 - Start get book by title oop
+2021-03-28 21:48:19 INFO  BookServiceImpl:80 - Operation get authors by irst and last name successful
+2021-03-28 21:48:19 INFO  BookServiceImpl:29 - Start read operation. Read info about: oop
+2021-03-28 21:48:19 INFO  BookServiceImpl:33 - End read info about book. Operation successful
+2021-03-28 21:49:26 INFO  AuthorServiceImpl:72 - Start get author by first and last name Armen Kuku
+2021-03-28 21:49:26 INFO  AuthorServiceImpl:74 - Operation get authors by irst and last name successful
+2021-03-28 21:49:26 INFO  AuthorServiceImpl:26 - Start read operation. Read info about: Armen Kuku
+2021-03-28 21:49:26 INFO  AuthorServiceImpl:30 - End read info about author. Operation successful
+2021-03-28 21:59:34 INFO  Main:11 - Start project
+2021-03-28 21:59:53 INFO  BookServiceImpl:78 - Start get book by title oop
+2021-03-28 21:59:53 ERROR BookServiceImpl:83 - Book: oop not found
+2021-03-28 21:59:53 INFO  Main:13 - Project ends successfully
+2021-03-28 22:06:56 INFO  Main:11 - Start project
+2021-03-28 22:07:21 INFO  AuthorServiceImpl:18 - Start create Author: Jack New
+2021-03-28 22:07:21 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-03-28 22:07:33 INFO  AuthorServiceImpl:44 - Start update operation. Read info about: Mark Towell
+2021-03-28 22:07:33 ERROR AuthorServiceImpl:47 - Author: Mark Towell Not found
+2021-03-28 22:07:33 INFO  AuthorServiceImpl:48 - End update info about author. Operation successful
+2021-03-28 22:07:33 INFO  BookServiceImpl:19 - Start create book: Rob
+2021-03-28 22:07:33 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-03-28 22:08:04 INFO  BookServiceImpl:46 - Start update operation. Read info about: oop
+2021-03-28 22:08:04 ERROR BookServiceImpl:49 - Book: oop Not found
+2021-03-28 22:08:04 INFO  BookServiceImpl:50 - End update info about book. Operation successful
+2021-03-28 22:08:06 INFO  BookServiceImpl:46 - Start update operation. Read info about: aop
+2021-03-28 22:08:06 ERROR BookServiceImpl:49 - Book: aop Not found
+2021-03-28 22:08:06 INFO  BookServiceImpl:50 - End update info about book. Operation successful
+2021-03-28 22:08:06 INFO  AuthorServiceImpl:18 - Start create Author: Mark Towell
+2021-03-28 22:08:06 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-03-28 22:08:24 INFO  AuthorServiceImpl:73 - Start get author by first and last name Mark Towell
+2021-03-28 22:08:24 INFO  AuthorServiceImpl:75 - Operation get authors by irst and last name successful
+2021-03-28 22:08:24 INFO  AuthorServiceImpl:27 - Start read operation. Read info about: Mark Towell
+2021-03-28 22:08:24 INFO  AuthorServiceImpl:31 - End read info about author. Operation successful

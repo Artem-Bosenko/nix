@@ -2,6 +2,7 @@ package ua.com.hometask;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataBase {
 
@@ -66,6 +67,10 @@ public class DataBase {
         return a;
     }
 
+    public List<Author> getAllAuthors() {
+        return authors.stream().collect(Collectors.toList());
+    }
+
     public boolean isAuthorIDExist(int id){
         return authors.stream().anyMatch(author -> author.getId() == id);
     }
@@ -92,6 +97,7 @@ public class DataBase {
         Book a = books.stream().filter(book1 -> book1.getId() == book.getId()).findFirst().orElse(null);
         a.setTitle(book.getTitle());
         a.setAuthorList(book.getAuthorList());
+        a.setAuthorList(book.getAuthorList());
     }
 
     public void deleteBook(int id) {
@@ -115,7 +121,9 @@ public class DataBase {
         }
         return bookList;
     }
-
+    public List<Book> getAllBooks() {
+        return books.stream().collect(Collectors.toList());
+    }
     public boolean isBookIDExist(int id){
         return books.stream().anyMatch(book -> book.getId() == id);
     }

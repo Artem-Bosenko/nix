@@ -3,6 +3,7 @@ package ua.com.hometask.impl;
 import org.apache.log4j.Logger;
 import ua.com.hometask.Author;
 import ua.com.hometask.BaseTypeService;
+import ua.com.hometask.Book;
 import ua.com.hometask.DataBase;
 
 import java.util.List;
@@ -76,5 +77,12 @@ public class AuthorServiceImpl implements BaseTypeService<Author> {
         }
         else log.error("Author: "+firstName + lastName + " not found");
         throw new RuntimeException("author not found");
+    }
+
+    public List<Author> findAll(){
+        return dataBase.getAllAuthors();
+    }
+    public boolean isAuthorExist(Author author){
+        return dataBase.isAuthorIDExist(author.getId());
     }
 }

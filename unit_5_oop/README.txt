@@ -1,0 +1,1 @@
+Tests for this project (CRUD) are in the service module. If you want to start project, you'll start start.bat file
