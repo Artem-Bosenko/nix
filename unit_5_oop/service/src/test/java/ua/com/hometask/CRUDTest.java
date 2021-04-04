@@ -1,7 +1,7 @@
 package ua.com.hometask;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -23,9 +23,6 @@ public class CRUDTest {
     private static final Book  book = new Book() ;
     private static final Author author = new Author();
 
-    @BeforeAll
-    public static void init(){}
-
     @Test
     @Order(1)
     public void createAuthorTest(){
@@ -42,7 +39,7 @@ public class CRUDTest {
         author.setBookList(bookList);
         authorService.create(author);
 
-        Assert.assertTrue(authorService.isAuthorExist(author));
+        Assertions.assertTrue(authorService.isAuthorExist(author));
     }
 
     @Test
@@ -61,7 +58,7 @@ public class CRUDTest {
         book.setAuthorList(authorList);
         bookService.create(book);
 
-        Assert.assertTrue(bookService.isBookExistByTitle(book));
+        Assertions.assertTrue(bookService.isBookExistByTitle(book));
     }
 
     @Test
@@ -85,7 +82,7 @@ public class CRUDTest {
         author.setFirstName("Iv");
         author.setLastName("Mrafasga");
         authorService.update(author);
-        Assert.assertNotNull(authorService.findAuthorByFirstNameAndLastName("Iv", "Mrafasga"));
+        Assertions.assertNotNull(authorService.findAuthorByFirstNameAndLastName("Iv", "Mrafasga"));
     }
 
     @Test
@@ -93,7 +90,7 @@ public class CRUDTest {
     public void updateBookTest(){
         book.setTitle("Kuuu");
         bookService.update(book);
-        Assert.assertNotNull(bookService.findBookByTitle("Kuuu"));
+        Assertions.assertNotNull(bookService.findBookByTitle("Kuuu"));
     }
 
     @Test
@@ -101,13 +98,14 @@ public class CRUDTest {
     public void deleteAuthorTest(){
 
         authorService.delete(author.getId());
-        Assert.assertFalse(authorService.isAuthorExist(author));
+        Assertions.assertFalse(authorService.isAuthorExist(author));
     }
 
     @Test
     @Order(8)
     public void deleteBookTest(){
+
         bookService.delete(book.getId());
-        Assert.assertFalse(bookService.isBookExistByTitle(book));
+        Assertions.assertFalse(bookService.isBookExistByTitle(book));
     }
 }

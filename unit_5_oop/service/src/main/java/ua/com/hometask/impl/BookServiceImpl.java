@@ -55,7 +55,7 @@ public class BookServiceImpl implements BaseTypeService<Book> {
     public void delete(int id) {
 
 
-        log.info("Start delete operation. Delete author with id: " + id);
+        log.info("Start delete operation. Delete book with id: " + id);
         if (dataBase.isBookIDExist(id)) {
             dataBase.deleteBook(id);
         } else log.error("Book with ID: " + id + " Not found");

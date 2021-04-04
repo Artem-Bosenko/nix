@@ -1,10 +1,12 @@
 package ua.com.hometask;
 
 import org.apache.commons.collections.CollectionUtils;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import ua.com.hometask.impl.AuthorServiceImpl;
 import ua.com.hometask.impl.BookServiceImpl;
 
@@ -12,6 +14,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CommonTest {
 
     private static final AuthorServiceImpl authorService = new AuthorServiceImpl();
@@ -46,7 +49,7 @@ public class CommonTest {
             bookList.removeAll(bookList);
             authorList.removeAll(authorList);
         }
-        Assert.assertTrue(CollectionUtils.isNotEmpty(authorService.findAll()));
+        Assertions.assertTrue(CollectionUtils.isNotEmpty(authorService.findAll()));
     }
 
     @Test
@@ -65,7 +68,7 @@ public class CommonTest {
         author.setBookList(bookList);
         authorService.create(author);
 
-        Assert.assertTrue(authorService.isAuthorExist(author));
+        Assertions.assertTrue(authorService.isAuthorExist(author));
     }
 
     @Test
@@ -84,7 +87,7 @@ public class CommonTest {
         book.setAuthorList(authorList);
         bookService.create(book);
 
-        Assert.assertTrue(bookService.isBookExistByTitle(book));
+        Assertions.assertTrue(bookService.isBookExistByTitle(book));
     }
 
     @Test
@@ -110,7 +113,7 @@ public class CommonTest {
         a.setFirstName("Iv");
         a.setLastName("Mrafasga");
         authorService.update(a);
-        Assert.assertNotNull(authorService.findAuthorByFirstNameAndLastName("Iv", "Mrafasga"));
+        Assertions.assertNotNull(authorService.findAuthorByFirstNameAndLastName("Iv", "Mrafasga"));
     }
 
     @Test
@@ -119,7 +122,7 @@ public class CommonTest {
         Book b = bookService.findBookByTitle("testBook2");
         b.setTitle("Kuuu");
         bookService.update(b);
-        Assert.assertNotNull(bookService.findBookByTitle("Kuuu"));
+        Assertions.assertNotNull(bookService.findBookByTitle("Kuuu"));
     }
 
     @Test
@@ -128,7 +131,7 @@ public class CommonTest {
 
         Author a = authorService.findAuthorByFirstNameAndLastName("Oskar2","Test2");
         authorService.delete(a.getId());
-        Assert.assertFalse(authorService.isAuthorExist(a));
+        Assertions.assertFalse(authorService.isAuthorExist(a));
     }
 
     @Test
@@ -136,6 +139,6 @@ public class CommonTest {
     public void deleteBookTest(){
         Book b = bookService.findBookByTitle("testBook2");
         bookService.delete(b.getId());
-        Assert.assertFalse(bookService.isBookExistByTitle(b));
+        Assertions.assertFalse(bookService.isBookExistByTitle(b));
     }
 }

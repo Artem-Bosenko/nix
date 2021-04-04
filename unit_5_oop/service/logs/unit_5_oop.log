@@ -491,3 +491,158 @@
 2021-03-31 16:49:11 ERROR AuthorServiceImpl:78 - Author: Oskar2Test2 not found
 2021-03-31 16:49:11 INFO  AuthorServiceImpl:73 - Start get author by first and last name Oskar2 Test2
 2021-03-31 16:49:11 ERROR AuthorServiceImpl:78 - Author: Oskar2Test2 not found
+2021-03-31 22:05:40 INFO  BookServiceImpl:46 - Start update operation. Read info about: Kuuu
+2021-03-31 22:05:40 ERROR BookServiceImpl:49 - Book: Kuuu Not found
+2021-03-31 22:05:40 INFO  BookServiceImpl:50 - End update info about book. Operation successful
+2021-03-31 22:05:40 INFO  BookServiceImpl:78 - Start get book by title Kuuu
+2021-03-31 22:05:40 ERROR BookServiceImpl:83 - Book: Kuuu not found
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:27 - Start read operation. Read info about: null null
+2021-03-31 22:05:40 ERROR AuthorServiceImpl:30 - Author: null null Not found
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:31 - End read info about author. Operation successful
+2021-03-31 22:05:40 INFO  BookServiceImpl:58 - Start delete operation. Delete author with id: 1
+2021-03-31 22:05:40 ERROR BookServiceImpl:61 - Book with ID: 1 Not found
+2021-03-31 22:05:40 INFO  BookServiceImpl:62 - End update info about book. Operation successful
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:18 - Start create Author: Petro Ivanko
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-03-31 22:05:40 INFO  BookServiceImpl:29 - Start read operation. Read info about: Kuuu
+2021-03-31 22:05:40 ERROR BookServiceImpl:32 - Book: Kuuu Not found
+2021-03-31 22:05:40 INFO  BookServiceImpl:33 - End read info about book. Operation successful
+2021-03-31 22:05:40 INFO  BookServiceImpl:19 - Start create book: Eneida
+2021-03-31 22:05:40 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:54 - Start delete operation. Delete author with id: 1
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:58 - End update info about author. Operation successful
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:44 - Start update operation. Read info about: Iv Mrafasga
+2021-03-31 22:05:40 ERROR AuthorServiceImpl:47 - Author: Iv Mrafasga Not found
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:48 - End update info about author. Operation successful
+2021-03-31 22:05:40 INFO  AuthorServiceImpl:73 - Start get author by first and last name Iv Mrafasga
+2021-03-31 22:05:40 ERROR AuthorServiceImpl:78 - Author: IvMrafasga not found
+2021-03-31 22:09:07 INFO  BookServiceImpl:19 - Start create book: Eneida
+2021-03-31 22:09:07 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-03-31 22:09:07 INFO  BookServiceImpl:58 - Start delete operation. Delete book with id: 1
+2021-03-31 22:09:07 INFO  BookServiceImpl:62 - End update info about book. Operation successful
+2021-03-31 22:09:22 INFO  BookServiceImpl:19 - Start create book: Eneida
+2021-03-31 22:09:22 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-03-31 22:09:22 INFO  BookServiceImpl:58 - Start delete operation. Delete book with id: 1
+2021-03-31 22:09:22 INFO  BookServiceImpl:62 - End update info about book. Operation successful
+2021-04-04 14:25:56 INFO  BookServiceImpl:46 - Start update operation. Read info about: Kuuu
+2021-04-04 14:25:57 ERROR BookServiceImpl:49 - Book: Kuuu Not found
+2021-04-04 14:25:57 INFO  BookServiceImpl:50 - End update info about book. Operation successful
+2021-04-04 14:25:57 INFO  BookServiceImpl:78 - Start get book by title Kuuu
+2021-04-04 14:25:57 ERROR BookServiceImpl:83 - Book: Kuuu not found
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:27 - Start read operation. Read info about: null null
+2021-04-04 14:25:57 ERROR AuthorServiceImpl:30 - Author: null null Not found
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:31 - End read info about author. Operation successful
+2021-04-04 14:25:57 INFO  BookServiceImpl:58 - Start delete operation. Delete book with id: 1
+2021-04-04 14:25:57 ERROR BookServiceImpl:61 - Book with ID: 1 Not found
+2021-04-04 14:25:57 INFO  BookServiceImpl:62 - End update info about book. Operation successful
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:18 - Start create Author: Petro Ivanko
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:25:57 INFO  BookServiceImpl:29 - Start read operation. Read info about: Kuuu
+2021-04-04 14:25:57 ERROR BookServiceImpl:32 - Book: Kuuu Not found
+2021-04-04 14:25:57 INFO  BookServiceImpl:33 - End read info about book. Operation successful
+2021-04-04 14:25:57 INFO  BookServiceImpl:19 - Start create book: Eneida
+2021-04-04 14:25:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:54 - Start delete operation. Delete author with id: 1
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:58 - End update info about author. Operation successful
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:44 - Start update operation. Read info about: Iv Mrafasga
+2021-04-04 14:25:57 ERROR AuthorServiceImpl:47 - Author: Iv Mrafasga Not found
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:48 - End update info about author. Operation successful
+2021-04-04 14:25:57 INFO  AuthorServiceImpl:73 - Start get author by first and last name Iv Mrafasga
+2021-04-04 14:25:57 ERROR AuthorServiceImpl:78 - Author: IvMrafasga not found
+2021-04-04 14:29:01 INFO  BookServiceImpl:46 - Start update operation. Read info about: Kuuu
+2021-04-04 14:29:01 ERROR BookServiceImpl:49 - Book: Kuuu Not found
+2021-04-04 14:29:01 INFO  BookServiceImpl:50 - End update info about book. Operation successful
+2021-04-04 14:29:01 INFO  BookServiceImpl:78 - Start get book by title Kuuu
+2021-04-04 14:29:01 ERROR BookServiceImpl:83 - Book: Kuuu not found
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:27 - Start read operation. Read info about: null null
+2021-04-04 14:29:01 ERROR AuthorServiceImpl:30 - Author: null null Not found
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:31 - End read info about author. Operation successful
+2021-04-04 14:29:01 INFO  BookServiceImpl:58 - Start delete operation. Delete book with id: 1
+2021-04-04 14:29:01 ERROR BookServiceImpl:61 - Book with ID: 1 Not found
+2021-04-04 14:29:01 INFO  BookServiceImpl:62 - End update info about book. Operation successful
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:18 - Start create Author: Petro Ivanko
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:29:01 INFO  BookServiceImpl:29 - Start read operation. Read info about: Kuuu
+2021-04-04 14:29:01 ERROR BookServiceImpl:32 - Book: Kuuu Not found
+2021-04-04 14:29:01 INFO  BookServiceImpl:33 - End read info about book. Operation successful
+2021-04-04 14:29:01 INFO  BookServiceImpl:19 - Start create book: Eneida
+2021-04-04 14:29:01 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:54 - Start delete operation. Delete author with id: 1
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:58 - End update info about author. Operation successful
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:44 - Start update operation. Read info about: Iv Mrafasga
+2021-04-04 14:29:01 ERROR AuthorServiceImpl:47 - Author: Iv Mrafasga Not found
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:48 - End update info about author. Operation successful
+2021-04-04 14:29:01 INFO  AuthorServiceImpl:73 - Start get author by first and last name Iv Mrafasga
+2021-04-04 14:29:01 ERROR AuthorServiceImpl:78 - Author: IvMrafasga not found
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:18 - Start create Author: Petro Ivanko
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:30:35 INFO  BookServiceImpl:19 - Start create book: Eneida
+2021-04-04 14:30:35 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:27 - Start read operation. Read info about: Petro Ivanko
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:31 - End read info about author. Operation successful
+2021-04-04 14:30:35 INFO  BookServiceImpl:29 - Start read operation. Read info about: Eneida
+2021-04-04 14:30:35 INFO  BookServiceImpl:33 - End read info about book. Operation successful
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:44 - Start update operation. Read info about: Iv Mrafasga
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:48 - End update info about author. Operation successful
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:73 - Start get author by first and last name Iv Mrafasga
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:75 - Operation get authors by irst and last name successful
+2021-04-04 14:30:35 INFO  BookServiceImpl:46 - Start update operation. Read info about: Kuuu
+2021-04-04 14:30:35 INFO  BookServiceImpl:50 - End update info about book. Operation successful
+2021-04-04 14:30:35 INFO  BookServiceImpl:78 - Start get book by title Kuuu
+2021-04-04 14:30:35 INFO  BookServiceImpl:80 - Operation get authors by irst and last name successful
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:54 - Start delete operation. Delete author with id: 1
+2021-04-04 14:30:35 INFO  AuthorServiceImpl:58 - End update info about author. Operation successful
+2021-04-04 14:30:35 INFO  BookServiceImpl:58 - Start delete operation. Delete book with id: 1
+2021-04-04 14:30:35 INFO  BookServiceImpl:62 - End update info about book. Operation successful
+2021-04-04 14:31:56 INFO  BookServiceImpl:19 - Start create book: testBook51
+2021-04-04 14:31:56 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:56 INFO  BookServiceImpl:19 - Start create book: testBook10
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:18 - Start create Author: Oskar0 Test0
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook127
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook187
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:18 - Start create Author: Oskar1 Test1
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook88
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook102
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:18 - Start create Author: Oskar2 Test2
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook18
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook46
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:18 - Start create Author: Oskar3 Test3
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook144
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: testBook160
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:18 - Start create Author: Oskar4 Test4
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:18 - Start create Author: Petro Ivanko
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:22 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:19 - Start create book: Eneida
+2021-04-04 14:31:57 INFO  BookServiceImpl:23 - End create author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:73 - Start get author by first and last name Oskar2 Test2
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:75 - Operation get authors by irst and last name successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:27 - Start read operation. Read info about: Oskar2 Test2
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:31 - End read info about author. Operation successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:78 - Start get book by title testBook2
+2021-04-04 14:31:57 ERROR BookServiceImpl:83 - Book: testBook2 not found
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:73 - Start get author by first and last name Oskar2 Test2
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:75 - Operation get authors by irst and last name successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:44 - Start update operation. Read info about: Iv Mrafasga
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:48 - End update info about author. Operation successful
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:73 - Start get author by first and last name Iv Mrafasga
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:75 - Operation get authors by irst and last name successful
+2021-04-04 14:31:57 INFO  BookServiceImpl:78 - Start get book by title testBook2
+2021-04-04 14:31:57 ERROR BookServiceImpl:83 - Book: testBook2 not found
+2021-04-04 14:31:57 INFO  AuthorServiceImpl:73 - Start get author by first and last name Oskar2 Test2
+2021-04-04 14:31:57 ERROR AuthorServiceImpl:78 - Author: Oskar2Test2 not found
+2021-04-04 14:31:57 INFO  BookServiceImpl:78 - Start get book by title testBook2
+2021-04-04 14:31:57 ERROR BookServiceImpl:83 - Book: testBook2 not found
