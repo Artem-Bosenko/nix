@@ -1,4 +1,6 @@
-package ua.com.hometask.calendar;
+package ua.com.hometask.calendar.services;
+
+import ua.com.hometask.calendar.date.MyDate;
 
 public interface ArithmeticCalendarService {
 

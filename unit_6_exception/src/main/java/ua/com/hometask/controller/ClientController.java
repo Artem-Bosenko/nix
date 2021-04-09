@@ -1,4 +1,4 @@
-package ua.com.hometask.calendar.UI;
+package ua.com.hometask.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;

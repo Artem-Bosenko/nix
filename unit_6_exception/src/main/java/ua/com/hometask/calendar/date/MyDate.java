@@ -1,4 +1,4 @@
-package ua.com.hometask.calendar;
+package ua.com.hometask.calendar.date;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package ua.com.hometask.calendar;
+package ua.com.hometask.calendar.services;
 
 public interface FormatService {
 

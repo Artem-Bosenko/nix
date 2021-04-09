@@ -1,6 +1,6 @@
-package ua.com.hometask.calendar.impl;
+package ua.com.hometask.calendar.services.impl;
 
-import ua.com.hometask.calendar.FormatService;
+import ua.com.hometask.calendar.services.FormatService;
 
 public class FormatServiceImpl implements FormatService {
     private final long MILLISECONDS_IN_DAY = 86400000L;
@@ -15,7 +15,7 @@ public class FormatServiceImpl implements FormatService {
 
     @Override
     public long convertToMonths(long milliseconds, int numDays) {
-        return milliseconds / (numDays * MILLISECONDS_IN_HOUR);
+        return milliseconds / (numDays * MILLISECONDS_IN_DAY);
     }
 
 

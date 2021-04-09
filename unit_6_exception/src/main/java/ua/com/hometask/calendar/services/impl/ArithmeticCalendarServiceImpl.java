@@ -1,7 +1,7 @@
-package ua.com.hometask.calendar.impl;
+package ua.com.hometask.calendar.services.impl;
 
-import ua.com.hometask.calendar.ArithmeticCalendarService;
-import ua.com.hometask.calendar.MyDate;
+import ua.com.hometask.calendar.services.ArithmeticCalendarService;
+import ua.com.hometask.calendar.date.MyDate;
 
 import static java.lang.Math.abs;
 
