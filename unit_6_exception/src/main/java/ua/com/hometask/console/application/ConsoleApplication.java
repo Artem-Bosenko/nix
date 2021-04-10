@@ -27,6 +27,7 @@ public class ConsoleApplication {
                     window.run();
                     break;
                 }
+                default: throw new RuntimeException("Invalid command");
 
             }
 

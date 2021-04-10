@@ -28,8 +28,6 @@ public class ArithmeticCalendarServiceImpl implements ArithmeticCalendarService 
         switch (comparator){
             case "<": return firstDate.getValue() < secondDate.getValue();
             case ">": return firstDate.getValue() > secondDate.getValue();
-            case ">=": return firstDate.getValue() >= secondDate.getValue();
-            case "<=": return firstDate.getValue() <= secondDate.getValue();
             case "==": return firstDate.getValue() == secondDate.getValue();
             default: throw new RuntimeException("Invalid comparator");
         }
