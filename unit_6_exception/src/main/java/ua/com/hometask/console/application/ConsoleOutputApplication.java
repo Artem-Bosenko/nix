@@ -19,6 +19,6 @@ public class ConsoleOutputApplication {
     public void execute(){
         String str = outputController.execute(chooseFormat.chooseFormat());
         clientController.output(str);
-        System.out.println("Your variant: if you want exit, please input 0, else, repeat logic");
+        clientController.output("Your variant: if you want exit, please input 0, else, repeat logic");
     }
 }

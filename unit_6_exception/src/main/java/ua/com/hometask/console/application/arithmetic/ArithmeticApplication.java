@@ -5,6 +5,7 @@ import ua.com.hometask.calendar.arithmetic.ClassForCompareTwoDates;
 import ua.com.hometask.calendar.arithmetic.ClassForFindDifferentTimeFromTwoDates;
 import ua.com.hometask.calendar.arithmetic.ClassForSubtractTime;
 import ua.com.hometask.calendar.date.MyDate;
+import ua.com.hometask.console.window.ArithmeticWindow;
 import ua.com.hometask.controller.ClientController;
 
 public class ArithmeticApplication {
@@ -18,37 +19,28 @@ public class ArithmeticApplication {
     }
 
     public void showOperation(){
-        clientController.output("Please, choose operation");
-        clientController.output("1) Different between your date and new date\n2) Add time to date\n3) Subtract time from date\n4) Compare your date and new date");
-        clientController.output("Your choose ->");
-        String choose = clientController.read();
-        chooseOperation(choose);
-    }
+        ArithmeticWindow arithmeticWindow = new ArithmeticWindow(date);
+        System.out.println("Please, press Enter!");
 
-    private void chooseOperation(String s){
+        String answer;
+        while ((answer = clientController.read()) != null) {
 
-        switch (s){
-            case "1": {
-                ClassForFindDifferentTimeFromTwoDates differentTimeFromTwoDates = new ClassForFindDifferentTimeFromTwoDates(date);
-                differentTimeFromTwoDates.execute();
+            arithmeticWindow.run();
+            answer = clientController.read();
+            switch (answer) {
+                case "0": {
+                    System.exit(0);
+                    break;
+                }
+                case "1": {
+                    arithmeticWindow.run();
+                    break;
+                }
+                default: throw new RuntimeException("Invalid command");
 
-            };break;
-            case "2": {
-                ClassForAddTime addTime = new ClassForAddTime(date);
-                addTime.execute();
-
-            };break;
-            case "3": {
-                ClassForSubtractTime subtractTime = new ClassForSubtractTime(date);
-                subtractTime.execute();
-
-            };break;
-            case "4": {
-                ClassForCompareTwoDates compareTwoDates = new ClassForCompareTwoDates(date);
-                compareTwoDates.execute();
-
-            };break;
-
+            }
         }
     }
+
+
 }
