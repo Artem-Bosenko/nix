@@ -1,4 +1,4 @@
-package ua.com.hometask.calendar.UI;
+package ua.com.hometask.calendar.converts;
 
 public class ConvertToDate {
 

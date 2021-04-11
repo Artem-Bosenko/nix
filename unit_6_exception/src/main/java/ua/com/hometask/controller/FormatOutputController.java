@@ -1,6 +1,6 @@
 package ua.com.hometask.controller;
 
-import ua.com.hometask.calendar.UI.ConvertToDate;
+import ua.com.hometask.calendar.converts.ConvertToDate;
 import ua.com.hometask.calendar.date.MyDate;
 import ua.com.hometask.calendar.utils.DetermineLeapYearUtil;
 import ua.com.hometask.calendar.utils.DetermineNumberDaysInMonth;

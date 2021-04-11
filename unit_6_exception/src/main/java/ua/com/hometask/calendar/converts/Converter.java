@@ -1,4 +1,4 @@
-package ua.com.hometask.calendar.UI;
+package ua.com.hometask.calendar.converts;
 
 import ua.com.hometask.calendar.services.impl.FormatServiceImpl;
 
