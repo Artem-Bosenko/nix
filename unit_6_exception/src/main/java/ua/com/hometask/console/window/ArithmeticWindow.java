@@ -29,23 +29,27 @@ public class ArithmeticWindow {
             case "1": {
                 ClassForFindDifferentTimeFromTwoDates differentTimeFromTwoDates = new ClassForFindDifferentTimeFromTwoDates(date);
                 differentTimeFromTwoDates.execute();
-                clientController.output("Your variant: if you want exit, please input 0, else, repeat logic");
+                clientController.output("Your variant: if you want exit, please input 0, for repeat operation - input 1, to run start window output 2");
             };break;
             case "2": {
                 ClassForAddTime addTime = new ClassForAddTime(date);
                 addTime.execute();
-                clientController.output("Your variant: if you want exit, please input 0, else, repeat logic");
+                clientController.output("Your variant: if you want exit, please input 0, for repeat operation - input 1, to run start window output 2");
             };break;
             case "3": {
                 ClassForSubtractTime subtractTime = new ClassForSubtractTime(date);
                 subtractTime.execute();
-                clientController.output("Your variant: if you want exit, please input 0, else, repeat logic");
+                clientController.output("Your variant: if you want exit, please input 0, for repeat operation - input 1, to run start window output 2");
             };break;
             case "4": {
                 ClassForCompareTwoDates compareTwoDates = new ClassForCompareTwoDates(date);
                 compareTwoDates.execute();
-                clientController.output("Your variant: if you want exit, please input 0, else, repeat logic");
+                clientController.output("Your variant: if you want exit, please input 0, for repeat operation - input 1, to run start window output 2");
             };break;
+            default:{
+                clientController.output("Sorry, but your input invalid command. Repeat input");
+                run();
+            }
 
         }
     }

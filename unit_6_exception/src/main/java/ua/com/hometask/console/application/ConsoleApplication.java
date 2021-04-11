@@ -27,12 +27,15 @@ public class ConsoleApplication {
                     window.run();
                     break;
                 }
-                default: throw new RuntimeException("Invalid command");
-
+                default: {
+                    clientController.output("Sorry, but you input invalid command. Repeat input");
+                    run();
+                }
             }
-
         }
 
     }
 
 }
+
+

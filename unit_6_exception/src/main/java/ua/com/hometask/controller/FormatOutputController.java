@@ -5,6 +5,7 @@ import ua.com.hometask.calendar.date.MyDate;
 import ua.com.hometask.calendar.utils.DetermineLeapYearUtil;
 import ua.com.hometask.calendar.utils.DetermineNumberDaysInMonth;
 import ua.com.hometask.calendar.utils.FindMonthNameForNumberMonth;
+import ua.com.hometask.console.ClassForChooseFormat;
 import ua.com.hometask.console.DateSequance;
 
 
@@ -45,7 +46,11 @@ public class FormatOutputController extends FormatController {
                 return data[2] + "/" + monthSearch + "/" + data[0] + " " + data[3] + ":" + data[4] + ":" + data[5] + ":" + data[6];
 
             }
-            default: throw new RuntimeException("Invalid format");
+            default: {
+                System.out.println("Sorry, but please output format again");
+                ClassForChooseFormat chooseFormat = new ClassForChooseFormat();
+                return execute(chooseFormat.chooseFormat());
+            }
         }
 
     }

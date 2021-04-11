@@ -1,5 +1,7 @@
 package ua.com.hometask.controller;
 
+import ua.com.hometask.console.ClassForChooseFormat;
+
 public class FormatInputController extends FormatController {
 
     @Override
@@ -23,7 +25,11 @@ public class FormatInputController extends FormatController {
                 return "\\d{0,2}\\s(?:Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь)\\s\\d{0,4}\\s\\d{0,2}:\\d{0,2}:\\d{0,2}:\\d{0,2}";
 
             }
-            default: throw new RuntimeException("Invalid format");
+            default: {
+                System.out.println("Sorry, but please input format again");
+                ClassForChooseFormat chooseFormat = new ClassForChooseFormat();
+                return execute(chooseFormat.chooseFormat());
+            }
         }
     }
 

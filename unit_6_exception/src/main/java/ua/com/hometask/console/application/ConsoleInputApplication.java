@@ -10,13 +10,17 @@ public class ConsoleInputApplication {
     private static final FormatInputController inputController = new FormatInputController();
     private static int numberFormat = 0;
 
-    public static int getNumberFormat(){
+    public static int getNumberFormat() {
 
-        if (numberFormat!=0) return numberFormat;
-        else throw new RuntimeException("No define format");
+        if (numberFormat != 0) return numberFormat;
+        else {
+            System.out.println("Sorry, but your input value was invalid. Repeat input");
+            numberFormat = chooseFormat.chooseFormat();
+            return numberFormat;
+        }
     }
 
-    public static String execute(){
+    public static String execute() {
 
 
         numberFormat = chooseFormat.chooseFormat();
@@ -26,7 +30,10 @@ public class ConsoleInputApplication {
         String read = clientController.read();
 
         if (read.matches(regex)) return read;
-        else throw new RuntimeException("Non format input string");
-
+        else {
+            System.out.println("Sorry, but your input invalid command. Repeat input");
+            return execute();
+        }
     }
 }
+
