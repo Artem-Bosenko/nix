@@ -17,9 +17,11 @@ public class Test {
         SortedList<Integer> list1 = new SortedList<>();
         list1.add(5);
         list1.add(2);
-        list1.add(888);
-        System.out.println(Arrays.toString(list1.toArray()));
-        list.removeAll(list1);
+        list1.add(777);
+        list1.add(88);
+
+
+        list.addAll(list1);
         System.out.println(Arrays.toString(list.toArray()));
     }
 }

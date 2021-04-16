@@ -72,22 +72,113 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public boolean remove(Object o) {
-        return false;
+
+        if (size == 0) return false;
+
+        T[] newMassive = (T[]) new Object[size - 1];
+
+
+        for (int i = size - 1; i >= 0; i--) {
+            if (massive[i].equals(o)) {
+                remove(i);
+            }
+        }
+
+        Arrays.sort(massive);
+
+        for (int i = 0; i < newMassive.length; i++) {
+            newMassive[i] = massive[i];
+        }
+
+        massive = newMassive;
+        size--;
+
+        return true;
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        T[] mas = (T[]) c.toArray();
+
+        for (int i = 0; i < mas.length; i++) {
+            if (!contains(mas[i]))
+                return false;
+        }
+        return true;
     }
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        return false;
+        T[] newMassive = (T[]) new Object[size + c.size()];
+
+        if (size == 0) massive = (T[]) c.toArray();
+        else {
+
+
+            int indexForNewMassive = 0, indexForOldMassive = 0;
+            int sizeCurrentMassiveSize = size;
+            int addedMassiveSize = c.size();
+
+            while (sizeCurrentMassiveSize != 0) {
+                newMassive[indexForNewMassive] = massive[indexForOldMassive];
+                indexForNewMassive++;
+                indexForOldMassive++;
+                sizeCurrentMassiveSize--;
+            }
+
+            indexForOldMassive = 0;
+
+            while (addedMassiveSize != 0) {
+
+                T[] mas = (T[]) c.toArray();
+
+                newMassive[indexForNewMassive] = mas[indexForOldMassive];
+                indexForNewMassive++;
+                indexForOldMassive++;
+                addedMassiveSize--;
+            }
+        }
+
+        Arrays.sort(newMassive);
+        massive = newMassive;
+        return true;
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends T> c) {
-        return false;
+        T[] newMassive = (T[]) new Object[size + c.size()];
+
+        if (size == 0) massive = (T[]) c.toArray();
+        else {
+
+
+            int indexForNewMassive = 0, indexForOldMassive = 0;
+            int sizeCurrentMassiveSize = size;
+            int addedMassiveSize = c.size();
+
+            while (sizeCurrentMassiveSize != 0) {
+                newMassive[indexForNewMassive] = massive[indexForOldMassive];
+                indexForNewMassive++;
+                indexForOldMassive++;
+                sizeCurrentMassiveSize--;
+            }
+
+            indexForOldMassive = 0;
+
+            while (addedMassiveSize != 0) {
+
+                T[] mas = (T[]) c.toArray();
+
+                newMassive[indexForNewMassive] = mas[indexForOldMassive];
+                indexForNewMassive++;
+                indexForOldMassive++;
+                addedMassiveSize--;
+            }
+        }
+
+        Arrays.sort(newMassive);
+        massive = newMassive;
+        return true;
     }
 
     @Override
@@ -202,7 +293,12 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+
+        for (int i = massive.length-1; i >= 0; i--) {
+            if (massive[i].equals(o)) return i;
+        }
+
+        return -1;
     }
 
     @Override
@@ -219,4 +315,6 @@ public class SortedList<T> implements List<T> {
     public List<T> subList(int fromIndex, int toIndex) {
         return null;
     }
+
+
 }
