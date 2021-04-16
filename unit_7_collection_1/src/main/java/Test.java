@@ -1,5 +1,7 @@
 import ua.com.hometaskcollection.SortedList;
 
+import java.util.Arrays;
+
 public class Test {
     public void test(){
         SortedList<Integer> list = new SortedList<>();
@@ -8,8 +10,10 @@ public class Test {
         list.add(5);
         list.add(7);
         list.add(4);
-
-        System.out.println(list.indexOf(5));
-        System.out.println(list.contains(7));
+        System.out.println(list.isEmpty());
+        System.out.println(Arrays.toString(list.toArray()));
+        list.clear();
+        System.out.println(Arrays.toString(list.toArray()));
+        System.out.println(list.isEmpty());
     }
 }

@@ -102,7 +102,9 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public void clear() {
-
+        T[] newMassive = (T[]) new Object[0];
+        massive = newMassive;
+        size = 0;
     }
 
     @Override
