@@ -1,4 +1,4 @@
-import java.util.Comparator;
+package ua.com.hometaskcollection;
 
 public class User implements Comparable<User> {
     private String name;
@@ -7,7 +7,7 @@ public class User implements Comparable<User> {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "ua.com.hometaskcollection.User{" +
                 "name='" + name + '\'' +
                 '}';
     }

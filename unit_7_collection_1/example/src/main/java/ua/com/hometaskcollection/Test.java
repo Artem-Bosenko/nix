@@ -1,4 +1,4 @@
-import ua.com.hometaskcollection.SortedList;
+package ua.com.hometaskcollection;
 
 import java.util.Arrays;
 import java.util.List;
