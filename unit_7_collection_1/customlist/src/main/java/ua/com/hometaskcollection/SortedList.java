@@ -39,11 +39,15 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        return massive;
     }
 
     @Override
     public <T1> T1[] toArray(T1[] a) {
+
+        if (a.length < massive.length) {
+
+        }
         return null;
     }
 
