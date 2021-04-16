@@ -109,12 +109,16 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public T get(int index) {
-        return null;
+        return massive[index];
     }
 
     @Override
     public T set(int index, T element) {
-        return null;
+
+        T oldValue = massive[index];
+        massive[index] = element;
+        Arrays.sort(massive);
+        return oldValue;
     }
 
     @Override
