@@ -140,7 +140,25 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public T remove(int index) {
-        return null;
+
+        T oldValue = massive[index];
+        T[] newMassive = (T[]) new Object[size - 1];
+
+
+        for(int i = index; i < size - 1; i++) {
+            massive[i] = massive[i+1];
+        }
+        Arrays.sort(massive);
+
+        for (int i = 0; i < newMassive.length; i++) {
+            newMassive[i] = massive[i];
+        }
+
+        massive = newMassive;
+        size--;
+        System.out.println(massive.length);
+
+        return oldValue;
     }
 
     @Override

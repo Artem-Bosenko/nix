@@ -10,8 +10,8 @@ public class Test {
         list.add(7);
         list.add(4);
         System.out.println(Arrays.toString(list.toArray()));
-        System.out.println(list.get(1));
-        list.set(1,88);
+        list.remove(2);
+
         System.out.println(Arrays.toString(list.toArray()));
 
     }
