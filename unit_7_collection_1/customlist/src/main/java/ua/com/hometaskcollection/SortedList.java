@@ -92,12 +92,44 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return false;
+
+        if (size == 0) return false;
+
+        for (int i = size - 1; i >= 0; i--) {
+            if (c.contains(massive[i])) {
+                remove(i);
+            }
+        }
+
+        T[] newMassive = (T[]) new Object[size];
+        for (int i = 0; i < newMassive.length; i++) {
+            newMassive[i] = massive[i];
+        }
+        massive = newMassive;
+
+        return true;
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        if (size == 0) return false;
+
+        int counter = 0;
+
+        for (int i = size - 1; i >= 0; i--) {
+            if (!c.contains(massive[i])) {
+                remove(i);
+            }else counter++;
+        }
+
+        T[] newMassive = (T[]) new Object[counter];
+
+        for (int i = 0; i < newMassive.length; i++) {
+            newMassive[i] = massive[i];
+        }
+        massive = newMassive;
+
+        return true;
     }
 
     @Override
@@ -145,7 +177,7 @@ public class SortedList<T> implements List<T> {
         T[] newMassive = (T[]) new Object[size - 1];
 
 
-        for(int i = index; i < size - 1; i++) {
+        for(int i = index; i < size-1 ; i++) {
             massive[i] = massive[i+1];
         }
         Arrays.sort(massive);
@@ -156,7 +188,6 @@ public class SortedList<T> implements List<T> {
 
         massive = newMassive;
         size--;
-        System.out.println(massive.length);
 
         return oldValue;
     }
@@ -166,7 +197,7 @@ public class SortedList<T> implements List<T> {
         for (int i = 0; i <size; i++) {
             if (o.equals(massive[i])) return i;
         }
-        throw new RuntimeException("Doesn't exist element");
+        return -1;
     }
 
     @Override

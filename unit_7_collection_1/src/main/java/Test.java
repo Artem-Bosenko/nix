@@ -9,10 +9,17 @@ public class Test {
         list.add(5);
         list.add(7);
         list.add(4);
+        list.add(9);
+        list.add(1);
+        list.add(2);
         System.out.println(Arrays.toString(list.toArray()));
-        list.remove(2);
 
+        SortedList<Integer> list1 = new SortedList<>();
+        list1.add(5);
+        list1.add(2);
+        list1.add(888);
+        System.out.println(Arrays.toString(list1.toArray()));
+        list.removeAll(list1);
         System.out.println(Arrays.toString(list.toArray()));
-
     }
 }
