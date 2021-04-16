@@ -2,19 +2,19 @@ package ua.com.hometaskcollection;
 
 import java.util.*;
 
-public class SortedList<T> implements List<T> {
+public class SortedList<T extends Comparable<T>> implements List<T> {
 
     private T[] massive;
     private int size;
 
     public SortedList() {
-        massive = (T[]) new Object[0];
+        massive = (T[]) new Comparable[0];
         size = 0;
     }
 
     public SortedList(int capacity) {
         size = capacity;
-        massive = (T[]) new Object[size];
+        massive = (T[]) new Comparable[size];
     }
 
     @Override
@@ -44,16 +44,12 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public <T1> T1[] toArray(T1[] a) {
-
-        if (a.length < massive.length) {
-
-        }
-        return null;
+        return (T1[]) massive;
     }
 
     @Override
     public boolean add(T t) {
-        T[] newMassive = (T[]) new Object[size + 1];
+        T[] newMassive = (T[]) new Comparable[size+1];
         if(size() == 0){
             newMassive[0] = t;
         }
@@ -66,7 +62,7 @@ public class SortedList<T> implements List<T> {
         }
         massive = newMassive;
         size++;
-        Arrays.sort(massive);
+        quickSort(0,size-1);
         return true;
     }
 
@@ -75,7 +71,7 @@ public class SortedList<T> implements List<T> {
 
         if (size == 0) return false;
 
-        T[] newMassive = (T[]) new Object[size - 1];
+        T[] newMassive = (T[]) new Comparable[size - 1];
 
 
         for (int i = size - 1; i >= 0; i--) {
@@ -84,7 +80,7 @@ public class SortedList<T> implements List<T> {
             }
         }
 
-        Arrays.sort(massive);
+        quickSort(0,size-1);
 
         for (int i = 0; i < newMassive.length; i++) {
             newMassive[i] = massive[i];
@@ -109,7 +105,7 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        T[] newMassive = (T[]) new Object[size + c.size()];
+        T[] newMassive = (T[]) new Comparable[size + c.size()];
 
         if (size == 0) massive = (T[]) c.toArray();
         else {
@@ -139,14 +135,15 @@ public class SortedList<T> implements List<T> {
             }
         }
 
-        Arrays.sort(newMassive);
         massive = newMassive;
+        size = size + c.size();
+        quickSort(0,size-1);
         return true;
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends T> c) {
-        T[] newMassive = (T[]) new Object[size + c.size()];
+        T[] newMassive = (T[]) new Comparable[size + c.size()];
 
         if (size == 0) massive = (T[]) c.toArray();
         else {
@@ -176,8 +173,10 @@ public class SortedList<T> implements List<T> {
             }
         }
 
-        Arrays.sort(newMassive);
+
         massive = newMassive;
+        size = size + c.size();
+        quickSort(0,size-1);
         return true;
     }
 
@@ -192,12 +191,12 @@ public class SortedList<T> implements List<T> {
             }
         }
 
-        T[] newMassive = (T[]) new Object[size];
+        T[] newMassive = (T[]) new Comparable[size];
         for (int i = 0; i < newMassive.length; i++) {
             newMassive[i] = massive[i];
         }
         massive = newMassive;
-
+        quickSort(0,size-1);
         return true;
     }
 
@@ -213,20 +212,21 @@ public class SortedList<T> implements List<T> {
             }else counter++;
         }
 
-        T[] newMassive = (T[]) new Object[counter];
+        T[] newMassive = (T[]) new Comparable[counter];
 
         for (int i = 0; i < newMassive.length; i++) {
             newMassive[i] = massive[i];
         }
         massive = newMassive;
+        size = counter;
+        quickSort(0,size-1);
 
         return true;
     }
 
     @Override
     public void clear() {
-        T[] newMassive = (T[]) new Object[0];
-        massive = newMassive;
+        massive = (T[]) new Comparable[0];
         size = 0;
     }
 
@@ -240,13 +240,13 @@ public class SortedList<T> implements List<T> {
 
         T oldValue = massive[index];
         massive[index] = element;
-        Arrays.sort(massive);
+        quickSort(0,size-1);
         return oldValue;
     }
 
     @Override
     public void add(int index, T element) {
-        T[] newMassive = (T[]) new Object[size + 1];
+        T[] newMassive = (T[]) new Comparable[size + 1];
         if(size() == 0){
             newMassive[0] = element;
         }
@@ -258,20 +258,21 @@ public class SortedList<T> implements List<T> {
             newMassive[newMassive.length-1] = element;
         }
         massive = newMassive;
-        Arrays.sort(massive);
+        size++;
+        quickSort(0,size-1);
     }
 
     @Override
     public T remove(int index) {
 
         T oldValue = massive[index];
-        T[] newMassive = (T[]) new Object[size - 1];
+        T[] newMassive = (T[]) new Comparable[size - 1];
 
 
         for(int i = index; i < size-1 ; i++) {
             massive[i] = massive[i+1];
         }
-        Arrays.sort(massive);
+        quickSort(0,size-1);
 
         for (int i = 0; i < newMassive.length; i++) {
             newMassive[i] = massive[i];
@@ -317,4 +318,33 @@ public class SortedList<T> implements List<T> {
     }
 
 
+    private void quickSort(int begin, int end) {
+        if (begin < end) {
+            int partitionIndex = heap(begin, end);
+
+            quickSort(begin, partitionIndex-1);
+            quickSort(partitionIndex+1, end);
+        }
+    }
+
+    private int heap(int begin, int end) {
+        T pivot = massive[end];
+        int i = (begin-1);
+
+        for (int j = begin; j < end; j++) {
+            if (massive[j].compareTo(pivot)<=0 ) {
+                i++;
+
+                T swapTemp = massive[i];
+                massive[i] = massive[j];
+                massive[j] = swapTemp;
+            }
+        }
+
+        T swapTemp = massive[i+1];
+        massive[i+1] = massive[end];
+        massive[end] = swapTemp;
+
+        return i+1;
+    }
 }

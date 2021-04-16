@@ -1,10 +1,11 @@
 import ua.com.hometaskcollection.SortedList;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Test {
     public void test(){
-        SortedList<Integer> list = new SortedList<>();
+        /*SortedList<Integer> list = new SortedList<>();
         list.add(1);
         list.add(5);
         list.add(7);
@@ -22,6 +23,16 @@ public class Test {
 
 
         list.addAll(list1);
+        System.out.println(Arrays.toString(list.toArray()));*/
+
+        List<User> list = new SortedList();
+        list.add(new User("eee"));
+        list.add(new User("www"));
+        list.add(new User("qqq"));
+        list.add(new User("aaa"));
+        System.out.println(Arrays.toString(list.toArray()));
+        list.remove( 3);
+
         System.out.println(Arrays.toString(list.toArray()));
     }
 }
