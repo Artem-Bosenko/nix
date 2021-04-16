@@ -1,9 +1,6 @@
 package ua.com.hometaskcollection;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class SortedList<T> implements List<T> {
 
@@ -32,7 +29,7 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        return indexOf(o) >= 0;
     }
 
     @Override
@@ -52,7 +49,21 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
-        return false;
+        T[] newMassive = (T[]) new Object[size + 1];
+        if(size() == 0){
+            newMassive[0] = t;
+        }
+        else {
+
+            for (int i = 0; i < massive.length; i++) {
+                newMassive[i] = massive[i];
+            }
+            newMassive[newMassive.length-1] = t;
+        }
+        massive = newMassive;
+        size++;
+        Arrays.sort(massive);
+        return true;
     }
 
     @Override
@@ -102,7 +113,19 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public void add(int index, T element) {
+        T[] newMassive = (T[]) new Object[size + 1];
+        if(size() == 0){
+            newMassive[0] = element;
+        }
+        else {
 
+            for (int i = 0; i < massive.length; i++) {
+                newMassive[i] = massive[i];
+            }
+            newMassive[newMassive.length-1] = element;
+        }
+        massive = newMassive;
+        Arrays.sort(massive);
     }
 
     @Override
@@ -112,7 +135,10 @@ public class SortedList<T> implements List<T> {
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        for (int i = 0; i <size; i++) {
+            if (o.equals(massive[i])) return i;
+        }
+        throw new RuntimeException("Doesn't exist element");
     }
 
     @Override

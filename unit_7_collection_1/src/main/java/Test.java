@@ -2,9 +2,14 @@ import ua.com.hometaskcollection.SortedList;
 
 public class Test {
     public void test(){
-        SortedList<Integer> list = new SortedList<>(5);
+        SortedList<Integer> list = new SortedList<>();
 
-        System.out.println(list.size());
-        System.out.println(list.isEmpty());
+        list.add(1);
+        list.add(5);
+        list.add(7);
+        list.add(4);
+
+        System.out.println(list.indexOf(5));
+        System.out.println(list.contains(7));
     }
 }
