@@ -2,7 +2,7 @@ package ua.com.hometaskcollection;
 
 import java.util.*;
 
-public class SortedList<T extends Comparable<T>> implements List<T>, Cloneable {
+public class SortedList<T extends Comparable<T>> implements List<T> {
 
     private T[] massive;
     private int size;
