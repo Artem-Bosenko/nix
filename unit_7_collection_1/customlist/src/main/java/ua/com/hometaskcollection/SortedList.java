@@ -2,7 +2,7 @@ package ua.com.hometaskcollection;
 
 import java.util.*;
 
-public class SortedList<T extends Comparable<T>> implements List<T> {
+public class SortedList<T extends Comparable<T>> implements List<T>, Cloneable {
 
     private T[] massive;
     private int size;
@@ -15,6 +15,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
     public SortedList(int capacity) {
         size = capacity;
         massive = (T[]) new Comparable[size];
+        quickSort(0, size-1);
     }
 
     @Override
@@ -34,7 +35,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new CustomIterator();
     }
 
     @Override
@@ -49,20 +50,19 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
 
     @Override
     public boolean add(T t) {
-        T[] newMassive = (T[]) new Comparable[size+1];
-        if(size() == 0){
+        T[] newMassive = (T[]) new Comparable[size + 1];
+        if (size() == 0) {
             newMassive[0] = t;
-        }
-        else {
+        } else {
 
             for (int i = 0; i < massive.length; i++) {
                 newMassive[i] = massive[i];
             }
-            newMassive[newMassive.length-1] = t;
+            newMassive[newMassive.length - 1] = t;
         }
         massive = newMassive;
         size++;
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
         return true;
     }
 
@@ -80,7 +80,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
             }
         }
 
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
 
         for (int i = 0; i < newMassive.length; i++) {
             newMassive[i] = massive[i];
@@ -137,7 +137,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
 
         massive = newMassive;
         size = size + c.size();
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
         return true;
     }
 
@@ -176,7 +176,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
 
         massive = newMassive;
         size = size + c.size();
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
         return true;
     }
 
@@ -196,7 +196,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
             newMassive[i] = massive[i];
         }
         massive = newMassive;
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
         return true;
     }
 
@@ -209,7 +209,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
         for (int i = size - 1; i >= 0; i--) {
             if (!c.contains(massive[i])) {
                 remove(i);
-            }else counter++;
+            } else counter++;
         }
 
         T[] newMassive = (T[]) new Comparable[counter];
@@ -219,7 +219,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
         }
         massive = newMassive;
         size = counter;
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
 
         return true;
     }
@@ -240,26 +240,25 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
 
         T oldValue = massive[index];
         massive[index] = element;
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
         return oldValue;
     }
 
     @Override
     public void add(int index, T element) {
         T[] newMassive = (T[]) new Comparable[size + 1];
-        if(size() == 0){
+        if (size() == 0) {
             newMassive[0] = element;
-        }
-        else {
+        } else {
 
             for (int i = 0; i < massive.length; i++) {
                 newMassive[i] = massive[i];
             }
-            newMassive[newMassive.length-1] = element;
+            newMassive[newMassive.length - 1] = element;
         }
         massive = newMassive;
         size++;
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
     }
 
     @Override
@@ -269,10 +268,10 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
         T[] newMassive = (T[]) new Comparable[size - 1];
 
 
-        for(int i = index; i < size-1 ; i++) {
-            massive[i] = massive[i+1];
+        for (int i = index; i < size - 1; i++) {
+            massive[i] = massive[i + 1];
         }
-        quickSort(0,size-1);
+        quickSort(0, size - 1);
 
         for (int i = 0; i < newMassive.length; i++) {
             newMassive[i] = massive[i];
@@ -286,7 +285,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
 
     @Override
     public int indexOf(Object o) {
-        for (int i = 0; i <size; i++) {
+        for (int i = 0; i < size; i++) {
             if (o.equals(massive[i])) return i;
         }
         return -1;
@@ -295,7 +294,7 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
     @Override
     public int lastIndexOf(Object o) {
 
-        for (int i = massive.length-1; i >= 0; i--) {
+        for (int i = massive.length - 1; i >= 0; i--) {
             if (massive[i].equals(o)) return i;
         }
 
@@ -304,17 +303,24 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
 
     @Override
     public ListIterator<T> listIterator() {
-        return null;
+        return new CustomListIterator(0);
     }
 
     @Override
     public ListIterator<T> listIterator(int index) {
-        return null;
+        return new CustomListIterator(index);
     }
 
     @Override
     public List<T> subList(int fromIndex, int toIndex) {
-        return null;
+
+        SortedList<T> list = new SortedList<>();
+
+        for (int i = fromIndex; i < toIndex; i++) {
+            list.add(massive[fromIndex]);
+        }
+
+        return list;
     }
 
 
@@ -322,17 +328,17 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
         if (begin < end) {
             int partitionIndex = heap(begin, end);
 
-            quickSort(begin, partitionIndex-1);
-            quickSort(partitionIndex+1, end);
+            quickSort(begin, partitionIndex - 1);
+            quickSort(partitionIndex + 1, end);
         }
     }
 
     private int heap(int begin, int end) {
         T pivot = massive[end];
-        int i = (begin-1);
+        int i = (begin - 1);
 
         for (int j = begin; j < end; j++) {
-            if (massive[j].compareTo(pivot)<=0 ) {
+            if (massive[j].compareTo(pivot) <= 0) {
                 i++;
 
                 T swapTemp = massive[i];
@@ -341,10 +347,107 @@ public class SortedList<T extends Comparable<T>> implements List<T> {
             }
         }
 
-        T swapTemp = massive[i+1];
-        massive[i+1] = massive[end];
+        T swapTemp = massive[i + 1];
+        massive[i + 1] = massive[end];
         massive[end] = swapTemp;
 
-        return i+1;
+        return i + 1;
+    }
+
+
+    private class CustomIterator implements Iterator<T> {
+
+        int cursor;       // index of next element to return
+        int lastRet = -1; // index of last element returned; -1 if no such
+
+
+        @Override
+        public boolean hasNext() {
+            return cursor != size;
+        }
+
+        @Override
+        public T next() {
+            int i = cursor;
+            if (i >= size)
+                throw new NoSuchElementException();
+            Object[] elementData = massive;
+            if (i >= elementData.length)
+                throw new ConcurrentModificationException();
+            cursor = i + 1;
+            return (T) elementData[lastRet = i];
+        }
+
+        @Override
+        public void remove() {
+            if (lastRet < 0)
+                throw new IllegalStateException();
+
+            try {
+                SortedList.this.remove(lastRet);
+                cursor = lastRet;
+                lastRet = -1;
+            } catch (IndexOutOfBoundsException ex) {
+                throw new ConcurrentModificationException();
+            }
+        }
+
+    }
+
+    private class CustomListIterator extends CustomIterator implements ListIterator<T> {
+
+        public CustomListIterator(int index) {
+            super();
+            cursor = index;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cursor != size;
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return cursor != 0;
+        }
+
+        @Override
+        public T previous() {
+            int i = cursor - 1;
+            if (i < 0)
+                throw new NoSuchElementException();
+            Object[] elementData = SortedList.this.massive;
+            if (i >= elementData.length)
+                throw new ConcurrentModificationException();
+            cursor = i;
+            return (T) elementData[lastRet = i];
+        }
+
+        @Override
+        public int nextIndex() {
+            return cursor;
+        }
+
+        @Override
+        public int previousIndex() {
+            return cursor-1;
+        }
+
+        @Override
+        public void set(T t) {
+            try {
+                SortedList.this.set(lastRet, t);
+            } catch (IndexOutOfBoundsException ex) {
+                throw new ConcurrentModificationException();
+            }
+        }
+
+        @Override
+        public void add(T t) {
+            int i = cursor;
+            SortedList.this.add(i, t);
+            cursor = i + 1;
+            lastRet = -1;
+        }
     }
 }

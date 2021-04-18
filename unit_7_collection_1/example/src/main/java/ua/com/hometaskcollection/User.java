@@ -7,7 +7,7 @@ public class User implements Comparable<User> {
 
     @Override
     public String toString() {
-        return "ua.com.hometaskcollection.User{" +
+        return "'\n'User{" +
                 "name='" + name + '\'' +
                 '}';
     }

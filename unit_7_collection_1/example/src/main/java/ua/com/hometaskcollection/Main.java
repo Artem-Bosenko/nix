@@ -3,8 +3,8 @@ package ua.com.hometaskcollection;
 public class Main {
     public static void main(String[] args) {
 
-        Test test = new Test();
-        test.test();
+        Example test = new Example();
+        test.run();
 
     }
 }
