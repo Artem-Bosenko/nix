@@ -1,0 +1,1 @@
+Tests and logs are in service directory.
