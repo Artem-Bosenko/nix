@@ -1,0 +1,31 @@
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook43
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook26
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:23 - Start create new authorOskar0 Test0
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:25 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook95
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook56
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:23 - Start create new authorOskar1 Test1
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:25 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook119
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook170
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:23 - Start create new authorOskar2 Test2
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:25 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook165
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook153
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:23 - Start create new authorOskar3 Test3
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:25 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook157
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  BookServiceImpl:17 - Start create new book testBook77
+2021-04-25 12:26:21 INFO  BookServiceImpl:19 - Operation successful
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:23 - Start create new authorOskar4 Test4
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:25 - Operation successful
+2021-04-25 12:26:21 INFO  AuthorServiceImpl:56 - Start find all authors
