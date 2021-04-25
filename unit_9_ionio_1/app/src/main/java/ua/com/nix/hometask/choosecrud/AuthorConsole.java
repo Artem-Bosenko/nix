@@ -21,7 +21,6 @@ public class AuthorConsole {
     private static String firstName;
     private static String lastName;
     private static final List<Book> bookList = new LinkedList<>();
-    private static final List<Author> authorList = new LinkedList<>();
 
     public static void create() throws IOException {
 
@@ -32,17 +31,27 @@ public class AuthorConsole {
         System.out.print("Please input Last name of author -> ");
         lastName = reader.readLine();
         System.out.print("Input value of book of it author = ");
-        int num = Integer.parseInt(reader.readLine());
+
+        if(authorService.findAll().size() >= 1){
+            author.setId(authorService.findAll().get(authorService.findAll().size()-1).getId() + 1);
+        }
+        else author.setId(1);
         author.setFirstName(firstName);
         author.setLastName(lastName);
 
-        authorList.add(author);
+        int num = Integer.parseInt(reader.readLine());
+
         for (int i = 0; i < num; i++) {
             Book b = new Book();
             String title;
 
             System.out.print("Input title of " + (i + 1) + " book: ");
             title = reader.readLine();
+
+            if(bookService.findAll().size()>=1){
+                b.setId(bookService.findAll().get(bookService.findAll().size()-1).getId() + 1);
+            }else b.setId(1);
+
             b.setTitle(title);
             b.setIdAuthorsList(Collections.singletonList(author.getId()));
 
@@ -62,7 +71,7 @@ public class AuthorConsole {
         author.setIdBooks(booksID);
 
         authorService.create(author);
-        System.out.println("Operation ends successfully");
+
         System.out.println("Your variant: if you want exit, please input 0, else, repeat logic");
     }
 
@@ -97,7 +106,7 @@ public class AuthorConsole {
             a.setLastName(lastName);
             authorService.update(a);
         } else throw new RuntimeException("Author not found");
-        System.out.println("Operation ends successfully");
+
         System.out.println("Your variant: if you want exit, please input 0, else, repeat logic");
     }
 
@@ -111,7 +120,7 @@ public class AuthorConsole {
         if (a != null) {
             authorService.delete(a.getId());
         } else throw new RuntimeException("Author not found");
-        System.out.println("Operation ends successfully");
+
         System.out.println("Your variant: if you want exit, please input 0, else, repeat logic");
     }
 }

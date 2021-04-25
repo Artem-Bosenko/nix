@@ -2,9 +2,7 @@ package ua.com.nix.hometask;
 
 import lombok.Getter;
 import lombok.Setter;
-import sun.reflect.generics.tree.BaseType;
-import ua.com.nix.hometask.impl.AuthorServiceImpl;
-import ua.com.nix.hometask.impl.BookServiceImpl;
+
 
 import java.util.List;
 
@@ -22,13 +20,11 @@ public class Book extends BaseEntity{
 
     @Override
     public String toString() {
-        AuthorServiceImpl service = new AuthorServiceImpl();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Integer author : idAuthorsList){
-            Author author1 = service.findByID(author);
-            stringBuilder.append(author1.getFirstName() + " " + author1.getLastName() + " ");
-        }
 
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Integer i: idAuthorsList) {
+            stringBuilder.append(i).append(";");
+        }
         return "Book: ⟪" + title + "⟫ . Authors: " + stringBuilder.toString() ;
     }
 }

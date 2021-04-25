@@ -22,7 +22,6 @@ public class BookConsole {
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private static String title;
     private static final List<Author> authorList = new LinkedList<>();
-    private static final List<Book> bookList = new LinkedList<>();
 
 
     public static void create() throws IOException {
@@ -32,10 +31,13 @@ public class BookConsole {
         System.out.print("Input title of new book: ");
         title = reader.readLine();
         System.out.print("Input count of authors, who work with this book = ");
-        int num = Integer.parseInt(reader.readLine());
+
+        if(bookService.findAll().size() >= 1){
+            book.setId(bookService.findAll().get(bookService.findAll().size()-1).getId() + 1);
+        }else book.setId(1);
         book.setTitle(title);
 
-        bookList.add(book);
+        int num = Integer.parseInt(reader.readLine());
 
         for (int i = 0; i < num; i++) {
             Author a = new Author();
@@ -45,6 +47,11 @@ public class BookConsole {
             firstName = reader.readLine();
             System.out.print("Input Last name of " + (i + 1) + " author: ");
             lastName = reader.readLine();
+
+            if(authorService.findAll().size() >= 1){
+                a.setId(authorService.findAll().get(authorService.findAll().size()-1).getId() + 1);
+            }
+            else a.setId(1);
             a.setFirstName(firstName);
             a.setLastName(lastName);
             a.setIdBooks(Collections.singletonList(book.getId()));
@@ -55,7 +62,6 @@ public class BookConsole {
                 authorService.update(a);
             }else {
                 authorService.create(a);
-
             }
 
         }

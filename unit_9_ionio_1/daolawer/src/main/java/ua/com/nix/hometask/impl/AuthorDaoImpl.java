@@ -26,7 +26,6 @@ public class AuthorDaoImpl implements AuthorDao {
                 String[] header = {"ID\t", "First name\t", "Last name\t", "Books\t", "Visible\t"};
                 writer.writeNext(header);
             } else if (authorsData.size() == 1) base.setId(1);
-            else base.setId(Integer.parseInt(authorsData.get(authorsData.size() - 1)[0] + 1));
             String[] body = new String[5];
 
             body[0] = String.valueOf(base.getId());
@@ -52,7 +51,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
         for (int i = 1; i < authorsData.size(); i++) {
             if (Integer.parseInt(authorsData.get(i)[0]) == (base.getId())) {
-                String[] author = new String[4];
+                String[] author = new String[5];
                 author[0] = String.valueOf(base.getId());
                 author[1] = base.getFirstName();
                 author[2] = base.getLastName();
@@ -106,13 +105,13 @@ public class AuthorDaoImpl implements AuthorDao {
 
         if (authorsData.size() >= 2) {
             for (String[] authorsDatum : authorsData) {
-                if(Integer.parseInt(authorsDatum[0]) == id){
+                if (Integer.parseInt(authorsDatum[0]) == id) {
                     authorsDatum[3] = "false";
                 }
             }
         }
 
-        try (CSVWriter writer = new CSVWriter(new FileWriter("db/src/main/java/ua/com/nix/hometask/authors.csv"))){
+        try (CSVWriter writer = new CSVWriter(new FileWriter("db/src/main/java/ua/com/nix/hometask/authors.csv"))) {
             writer.writeAll(authorsData);
         } catch (IOException e) {
             e.printStackTrace();
@@ -147,7 +146,7 @@ public class AuthorDaoImpl implements AuthorDao {
         List<Author> authorList = findALl();
         List<Author> resultList = new ArrayList<>();
         for (Author author : authorList) {
-            if(author.getIdBooks().stream().anyMatch(integer -> integer == idBook)){
+            if (author.getIdBooks().stream().anyMatch(integer -> integer == idBook)) {
                 resultList.add(author);
             }
         }
@@ -166,12 +165,12 @@ public class AuthorDaoImpl implements AuthorDao {
     }
 
     @Override
-    public Author findAuthorByFirstNameAndLastName(String fName, String lName){
+    public Author findAuthorByFirstNameAndLastName(String fName, String lName) {
 
         List<String[]> authorsData = readFromAuthorCsv();
 
         for (int i = 1; i < authorsData.size(); i++) {
-            if(authorsData.get(i)[1].equals(fName) && authorsData.get(i)[2].equals(lName)){
+            if (authorsData.get(i)[1].equals(fName) && authorsData.get(i)[2].equals(lName)) {
                 Author author = new Author();
                 author.setId(Integer.parseInt(authorsData.get(i)[0]));
                 author.setFirstName(authorsData.get(i)[1]);
@@ -195,7 +194,7 @@ public class AuthorDaoImpl implements AuthorDao {
     public boolean isAuthorExist(String firstName, String lastName) {
         List<Author> authorList = findALl();
         for (Author author : authorList) {
-            if(author.getFirstName().equals(firstName) && author.getLastName().equals(lastName)) return true;
+            if (author.getFirstName().equals(firstName) && author.getLastName().equals(lastName)) return true;
         }
         return false;
     }

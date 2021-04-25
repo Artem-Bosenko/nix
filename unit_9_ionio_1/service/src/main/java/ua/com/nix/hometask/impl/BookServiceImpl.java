@@ -1,5 +1,6 @@
 package ua.com.nix.hometask.impl;
 
+import org.apache.log4j.Logger;
 import ua.com.nix.hometask.Book;
 import ua.com.nix.hometask.BookDao;
 import ua.com.nix.hometask.BookService;
@@ -8,26 +9,45 @@ import java.util.List;
 
 public class BookServiceImpl implements BookService {
 
+    private final Logger logger = Logger.getLogger(BookServiceImpl.class);
     private final BookDao bookDao = new BookDaoImpl();
 
     @Override
     public void create(Book book) {
+        logger.info("Start create new book " + book.getTitle());
         bookDao.create(book);
+        logger.info("Operation successful");
     }
 
     @Override
     public Book read(int id) {
-        return bookDao.read(id);
-    }
+        Book book = bookDao.findALl().stream().filter(book1 -> book1.getId() == id).findFirst().get();
+
+        logger.info("Start read info about book" + id);
+        if(bookDao.isBookByTitleExist(book.getTitle())){
+            logger.info("Operation ssuccessful");
+            return bookDao.read(id);
+        }
+        throw new RuntimeException("Book doesn't exist");    }
 
     @Override
     public void update(Book book) {
+        logger.info("Start update info about book " + book.getTitle());
         bookDao.update(book);
+        logger.info("Operation successful");
     }
 
     @Override
     public void delete(int id) {
+        logger.info("Start delete info about book" + id);
         bookDao.delete(id);
+        logger.info("Operation successful");
+    }
+
+    @Override
+    public List<Book> findAll() {
+        logger.info("Start find all books");
+        return bookDao.findALl();
     }
 
     @Override
