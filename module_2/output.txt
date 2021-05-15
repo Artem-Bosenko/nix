@@ -1,0 +1,14 @@
+Task 1
+start for -> 2020/04/05
+20200405
+start for -> 10/01/1920
+19200110
+start for -> 02-12-2000
+20000212
+
+Task 2
+First unique name: Clare have index = 6
+
+Task 3
+Minimum path between gdansk and warszawa = 3
+Minimum path between bydgoszcz and warszawa = 2
