@@ -14,19 +14,19 @@ public final class SearchMinPath {
         vertexQueue.add(source);
 
         while (!vertexQueue.isEmpty()) {
-            City u = vertexQueue.poll();
+            City startCity = vertexQueue.poll();
 
-            for (Paths e : u.getNeighbors())
+            for (Paths path : startCity.getNeighbors())
             {
-                City v = factory.getCity(e.getNeighbor());
-                int weight = e.getCost();
-                int distanceThroughU = u.getMinPath() + weight;
-                if (distanceThroughU < v.getMinPath()) {
-                    vertexQueue.remove(v);
+                City neighbor = factory.getCity(path.getNeighbor());
+                int cost = path.getCost();
+                int newDistance = startCity.getMinPath() + cost;
+                if (newDistance < neighbor.getMinPath()) {
+                    vertexQueue.remove(neighbor);
 
-                    v.setMinPath(distanceThroughU);
-                    v.setPreviousCity(u.getIndex());
-                    vertexQueue.add(v);
+                    neighbor.setMinPath(newDistance);
+                    neighbor.setPreviousCity(startCity.getIndex());
+                    vertexQueue.add(neighbor);
                 }
             }
         }
